@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const declaredString = "abcdefghijklmnopqrstuvwxyz";
+        const userInput = prompt("Nhập vào một chuỗi:");
+        function canCreateString(declaredStr, inputStr) {
+            const declaredChars = declaredStr.split("");
+            const inputChars = inputStr.split("");
+
+            for (let i = 0; i < inputChars.length; i++) {
+                const char = inputChars[i];
+                const index = declaredChars.indexOf(char);
+
+                if (index === -1) { 
+                    return false;
+                }
+                declaredChars.splice(index, 1);
+            }
+            return true;
+        }
+        const result = canCreateString(declaredString, userInput);
+        console.log(result);
+    </script>
+</body>
+</html>
